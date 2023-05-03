@@ -1,0 +1,54 @@
+{
+  "frontEnd": [
+    {
+      "name": "REACT",
+      "desc": "Fui criado pelo Facebook"
+    },
+    {
+      "name": "BOOTSTRAP",
+      "desc": "Eu e o CSS temos coisas em comum"
+    },
+    {
+      "name": "VUE",
+      "desc": "Dizem que sou melhor que o Angular"
+    }
+  ],
+  "backEnd": [
+    {
+      "name": "NODE",
+      "desc": "Faço parte da familia JavaScript"
+    },
+    {
+      "name": "EXPRESS",
+      "desc": "Eu posso gerar APIs"
+    }
+  ],
+  "linguagens": [
+    {
+      "name": "HTML5",
+      "desc": "Sou a uma parte fundamental dos browsers"
+    },
+    {
+      "name": "CSS3",
+      "desc": "Gosto de deixar as coisas mais atraentes para o usuario"
+    },
+    {
+      "name": "JAVASCRIPT",
+      "desc": "Gosto de interagir com os usuarios"
+    },
+    {
+      "name": "PYTHON",
+      "desc": "Estou presente nas faculdades de Ciencia da Computação"
+    }
+  ],
+  "mobile": [
+    {
+      "name": "REACT NATIVE",
+      "desc": "Assim como o meu irmão, eu fui criado pelo Facebook"
+    },
+    {
+      "name": "FLUTTER",
+      "desc": "Fui criado pelo Google"
+    }
+  ]
+}
