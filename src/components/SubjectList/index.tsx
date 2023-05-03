@@ -1,11 +1,19 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
+import styles from './styles';
 
-export default function SubjectList({ navigation, text }) {
+import { ScreenNavigation } from '../../screens/Home';
+
+type Params = {
+  navigation: ScreenNavigation,
+  text: string
+}
+
+export default function SubjectList({ navigation, text }: Params) {
   return (
-    <View>
-      <TouchableOpacity onPress={ () => navigation.navigate('Game') }>
-        <Text>{ text }</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity
+      style={ styles.button }
+      onPress={ () => navigation.navigate('Game') }>
+      <Text style={ styles.text }>{ text }</Text>
+    </TouchableOpacity>
   );
 }
