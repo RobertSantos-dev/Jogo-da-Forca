@@ -5,14 +5,17 @@ import { ScreenNavigation } from '../../screens/Home';
 
 type Params = {
   navigation: ScreenNavigation,
+  list: Array<{ name: string, desc: string }>
   text: string
 }
 
-export default function SubjectList({ navigation, text }: Params) {
+export default function SubjectList({ navigation, list, text }: Params) {
   return (
     <TouchableOpacity
       style={ styles.button }
-      onPress={ () => navigation.navigate('Game') }>
+      onPress={ () => {
+        navigation.navigate('Game', list)
+      } }>
       <Text style={ styles.text }>{ text }</Text>
     </TouchableOpacity>
   );
