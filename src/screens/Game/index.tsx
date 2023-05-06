@@ -2,6 +2,7 @@ import { View, Text } from 'react-native';
 import { useState, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 
+import Puppet from '../../components/Puppet';
 import { drawnWord } from './functions';
 import * as words from '../../services/words.json';
 
@@ -29,8 +30,7 @@ export default function Game() {
 
   return (
     <View>
-      <Text>{ word.name }</Text>
-      <Text>{ word.desc }</Text>
+      <Puppet />
     </View>
   );
 }
