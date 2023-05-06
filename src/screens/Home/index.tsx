@@ -1,18 +1,11 @@
 import { View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import type { StackNavigationProp } from '@react-navigation/stack';
 import styles from './styles';
 import SubjectList from '../../components/SubjectList';
-import * as words from '../../services/words.json';
-
-export type ScreenNavigation = StackNavigationProp<{
-  Home: undefined,
-  Game: undefined
-}>;
 
 export default function Home() {
-  const navigation = useNavigation<ScreenNavigation>();
+  const navigation = useNavigation();
 
   return (
     <View style={ styles.container }>
@@ -23,22 +16,22 @@ export default function Home() {
       <View style={ styles.buttonRoutes }>
         <SubjectList
           navigation={ navigation }
-          list={ words.linguagens }
+          subject="linguagens"
           text="Linguagens"
         />
         <SubjectList
           navigation={ navigation }
-          list={ words.frontEnd }
+          subject="frontEnd"
           text="Front-End"
         />
         <SubjectList
           navigation={ navigation }
-          list={ words.mobile }
+          subject="mobile"
           text="Mobile"
         />
         <SubjectList
           navigation={ navigation }
-          list={ words.backEnd }
+          subject="backEnd"
           text="Back-End"
         />
       </View>

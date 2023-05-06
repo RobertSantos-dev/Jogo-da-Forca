@@ -1,19 +1,30 @@
 import { View, Text } from 'react-native';
 import { useState, useEffect } from 'react';
-import { useRoute } from '@react-navigation/native'
+import { useRoute } from '@react-navigation/native';
 
-import type { RouteProp, ParamListBase } from '@react-navigation/native';
+import { drawnWord } from './functions';
+import * as words from '../../services/words.json';
 
-
+type Params = { subject: string };
 
 export default function Game() {
-  const { params }: Readonly<object | ParamListBase> = useRoute();
+  const { subject } = useRoute().params as Params;
   const [word, setWord] = useState({ name: "", desc: "" });
 
   useEffect(() => {
-    const index = Math.floor(Math.random() * params.length);
-    setWord(params[index])
-    console.log(params)
+    if (subject == 'frontEnd') {
+      drawnWord({ subject: words.frontEnd, setWord })
+    }
+    if (subject == 'backEnd') {
+      drawnWord({ subject: words.backEnd, setWord })
+    }
+    if (subject == 'mobile') {
+      drawnWord({ subject: words.mobile, setWord })
+    }
+    if (subject == 'linguagens') {
+      drawnWord({ subject: words.linguagens, setWord })
+    }
+
   }, [])
 
   return (
