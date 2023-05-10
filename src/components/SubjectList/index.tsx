@@ -10,6 +10,7 @@ type Params = {
 export default function SubjectList({ navigation, subject, text }: Params) {
   return (
     <TouchableOpacity
+      accessibilityRole='button'
       style={ styles.button }
       onPress={ () => {
         navigation.navigate('Game', { subject })

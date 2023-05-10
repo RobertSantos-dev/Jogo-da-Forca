@@ -9,5 +9,15 @@ jest.mock('react-native-reanimated', () => {
 
 // jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 
+jest.mock('@react-navigation/native', () => {
+  return {
+    useNavigation: () => {
+      return {
+        navigate: jest.fn()
+      }
+    }
+  }
+})
+
 // Para mais informação veja aqui:
 // https://reactnavigation.org/docs/testing/
