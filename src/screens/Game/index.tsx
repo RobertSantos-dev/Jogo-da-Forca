@@ -4,15 +4,17 @@ import { useRoute } from '@react-navigation/native';
 
 import Puppet from '../../components/Puppet';
 import Letters from '../../components/Letters';
-import { drawnWord } from './functions';
+import Keyboard from '../../components/Keyboard';
+import { drawnWord, randomLetters } from './functions';
 import * as words from '../../services/words.json';
 
 type Params = { subject: string };
 
 export default function Game() {
   const { subject } = useRoute().params as Params;
+  const [letters, setLetters] = useState([false]);
   const [word, setWord] = useState({ name: [''], desc: '' });
-  const [letters, setLetters] = useState([false])
+  const [interaction, setInteraction] = useState([''])
 
   useEffect(() => {
     if (subject == 'frontEnd') {
@@ -29,12 +31,26 @@ export default function Game() {
     }
   }, []);
 
+  useEffect(() => {
+    randomLetters({ arr: word.name, setInteraction });
+  }, [word])
+
+  useEffect(() => {
+    setLetters((prevState) => prevState);
+  }, [interaction]);
+
   return (
     <View>
       <Puppet />
       <Letters
         name={ word.name }
         letters={ letters }
+      />
+      <Keyboard
+        interaction={ interaction }
+        setLetters={ setLetters }
+        word={ word.name }
+        setInteraction={ setInteraction }
       />
     </View>
   );

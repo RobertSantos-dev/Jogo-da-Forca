@@ -1,5 +1,4 @@
 import { View, FlatList, Text } from 'react-native';
-// import { useEffect, useState } from 'react';
 import styles from './style';
 
 type Props = { name: string[], letters: boolean[] }

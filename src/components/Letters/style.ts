@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     width: 28,
   },
   habilited: {
+    display: 'flex',
     fontWeight: '600',
   },
   desabilited: {
