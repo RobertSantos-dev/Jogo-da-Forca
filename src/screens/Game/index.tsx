@@ -1,4 +1,5 @@
 import { View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { useState, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 
@@ -13,6 +14,7 @@ import * as words from '../../services/words.json';
 type Params = { subject: string };
 
 export default function Game() {
+  const { navigate } = useNavigation();
   const { subject } = useRoute().params as Params;
   const [letters, setLetters] = useState([false]);
   const [word, setWord] = useState({ name: [''], desc: '' });
@@ -40,6 +42,14 @@ export default function Game() {
 
   useEffect(() => {
     setLetters((prevState) => prevState);
+    if (result == 5) {
+      alert('Você Perdeu');
+      navigate('Home');
+    }
+    else if (letters.every((e) => e === true)) {
+      alert('Você Venceu');
+      navigate('Home');
+    }
   }, [interaction]);
 
   return (
