@@ -5,12 +5,19 @@ import { search } from './functions';
 
 type Props = {
   interaction: string[],
+  word: string[],
   setInteraction: Dispatch<SetStateAction<string[]>>
   setLetters: Dispatch<SetStateAction<boolean[]>>,
-  word: string[],
+  setResult: Dispatch<SetStateAction<number>>,
 }
 
-export default function Keyboard({ interaction, setLetters, word, setInteraction }: Props) {
+export default function Keyboard({
+  interaction,
+  setLetters,
+  word,
+  setInteraction,
+  setResult,
+}: Props) {
   return (
     <View style={ styles.container }>
       <FlatList
@@ -20,7 +27,7 @@ export default function Keyboard({ interaction, setLetters, word, setInteraction
         renderItem={ ({ item }) => (
           item != ' ' && (
             <TouchableOpacity
-              onPress={ () => search(item, setLetters, word, setInteraction) }
+              onPress={ () => search(item, setLetters, word, setInteraction, setResult) }
               style={ styles.button }>
               <Text style={ styles.buttonText }>{ item }</Text>
             </TouchableOpacity>

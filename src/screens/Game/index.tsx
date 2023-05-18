@@ -17,6 +17,7 @@ export default function Game() {
   const [letters, setLetters] = useState([false]);
   const [word, setWord] = useState({ name: [''], desc: '' });
   const [interaction, setInteraction] = useState([''])
+  const [result, setResult] = useState(0)
 
   useEffect(() => {
     if (subject == 'frontEnd') {
@@ -43,7 +44,7 @@ export default function Game() {
 
   return (
     <View style={ styles.container }>
-      <Puppet />
+      <Puppet result={ result } />
       <Letters
         name={ word.name }
         letters={ letters }
@@ -53,6 +54,7 @@ export default function Game() {
         setLetters={ setLetters }
         word={ word.name }
         setInteraction={ setInteraction }
+        setResult={ setResult }
       />
     </View>
   );
