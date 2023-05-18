@@ -11,7 +11,7 @@ export default function SubjectList({ navigation, subject, text }: Params) {
   return (
     <TouchableOpacity
       accessibilityRole='button'
-      style={ styles.button }
+      style={[styles.button, styles.buttonShadow]}
       onPress={ () => {
         navigation.navigate('Game', { subject })
       } }>

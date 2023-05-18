@@ -10,11 +10,19 @@ const styles = StyleSheet.create({
     gap: 3,
   },
   button: {
-    backgroundColor: '#50fa7b',
-    padding: 15,
+    alignItems: 'center',
+    backgroundColor: '#44475a',
+    borderRadius: 5,
+    elevation: 30,
+    height: 50,
+    justifyContent: 'center',
+    marginHorizontal: 2,
+    shadowColor: 'black',
+    width: 50,
   },
   buttonText: {
-    fontSize: 15,
+    color: '#ff79c6',
+    fontSize: 16,
     fontWeight: '600',
   }
 });

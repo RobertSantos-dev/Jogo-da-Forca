@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%'
+    width: '100%',
+    marginBottom: 30,
   },
   containerList: {
     flexDirection: 'row',
@@ -12,13 +13,16 @@ const styles = StyleSheet.create({
   containerLetter: {
     alignItems: 'center',
     borderBottomWidth: 2,
+    borderColor: '#f8f8f2',
     height: 28,
     justifyContent: 'center',
     width: 28,
   },
   habilited: {
+    color: '#f8f8f2',
     display: 'flex',
     fontWeight: '600',
+    fontSize: 17,
   },
   desabilited: {
     display: 'none',

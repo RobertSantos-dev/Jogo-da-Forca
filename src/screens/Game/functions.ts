@@ -18,14 +18,17 @@ type ParamsTwo = {
 
 // functions
 export const randomLetters = ({ arr, setInteraction }: ParamsTwo): void => {
-  const result = [...arr];
+  const result = new Set(arr);
   const random = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  for (let i = 0; i < 7; i += 1) {
-    let string = random.charAt(Math.floor(Math.random() * random.length));
-    result.push(string);
+  let i = 0
+  while (i < 7) {
+    const str = random.charAt(Math.floor(Math.random() * random.length));
+    if (!result.has(str)) {
+      result.add(str);
+      i += 1;
+    }
   }
-  result.sort()
-  setInteraction(result);
+  setInteraction([...result].sort());
 }
 
 export const drawnWord = ({ subject, setWord, setLetters }: ParamsOne) => {

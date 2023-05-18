@@ -5,6 +5,8 @@ import { useRoute } from '@react-navigation/native';
 import Puppet from '../../components/Puppet';
 import Letters from '../../components/Letters';
 import Keyboard from '../../components/Keyboard';
+
+import styles from './styles';
 import { drawnWord, randomLetters } from './functions';
 import * as words from '../../services/words.json';
 
@@ -40,7 +42,7 @@ export default function Game() {
   }, [interaction]);
 
   return (
-    <View>
+    <View style={ styles.container }>
       <Puppet />
       <Letters
         name={ word.name }
