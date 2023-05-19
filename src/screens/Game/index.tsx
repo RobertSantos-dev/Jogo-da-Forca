@@ -57,6 +57,7 @@ export default function Game() {
       <Puppet result={ result } />
       <Letters
         name={ word.name }
+        desc={ word.desc }
         letters={ letters }
       />
       <Keyboard

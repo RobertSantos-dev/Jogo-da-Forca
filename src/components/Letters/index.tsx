@@ -1,11 +1,16 @@
 import { View, FlatList, Text } from 'react-native';
 import styles from './style';
 
-type Props = { name: string[], letters: boolean[] }
+type Props = { name: string[], desc: string, letters: boolean[] }
 
-export default function Letters({ name, letters }: Props) {
+export default function Letters({ name, desc, letters }: Props) {
   return (
     <View style={ styles.container }>
+      <Text style={ styles.textDesc }>
+        Dica:
+        {' '}
+        <Text style={ styles.textDescStrong }>{ desc }</Text>
+      </Text>
       <FlatList
         contentContainerStyle={ styles.containerList }
         data={ name }

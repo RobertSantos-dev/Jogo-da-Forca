@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    marginBottom: 30,
+    marginBottom: 50,
   },
   containerList: {
     flexDirection: 'row',
@@ -26,6 +26,18 @@ const styles = StyleSheet.create({
   },
   desabilited: {
     display: 'none',
+  },
+
+  textDesc: {
+    color: '#f8f8f2',
+    fontSize: 15,
+    marginBottom: 30,
+    textAlign: 'center',
+  },
+  textDescStrong: {
+    color: '#50fa7b',
+    fontSize: 16,
+    fontWeight: '900',
   }
 });
 
