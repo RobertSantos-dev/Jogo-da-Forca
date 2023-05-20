@@ -9,9 +9,12 @@ export default function Letters({ name, desc, letters }: Props) {
       <Text style={ styles.textDesc }>
         Dica:
         {' '}
-        <Text style={ styles.textDescStrong }>{ desc }</Text>
+        <Text style={ styles.textDescStrong } testID="dicaId">
+          { desc }
+        </Text>
       </Text>
       <FlatList
+        testID="listLetters"
         contentContainerStyle={ styles.containerList }
         data={ name }
         renderItem={ ({ item, index }) => {

@@ -7,17 +7,18 @@ jest.mock('react-native-reanimated', () => {
   return Reanimated;
 });
 
-// jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 
 jest.mock('@react-navigation/native', () => {
   return {
     useNavigation: () => {
-      return {
-        navigate: jest.fn()
-      }
-    }
+      return { navigate: jest.fn() }
+    },
+    useRoute: () => ({
+      params: { subject: 'frontEnd' }
+    })
   }
-})
+});
 
 // Para mais informação veja aqui:
 // https://reactnavigation.org/docs/testing/

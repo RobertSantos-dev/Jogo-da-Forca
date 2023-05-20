@@ -1,5 +1,4 @@
 import React from 'react';
-// import { NavigationContainer } from '@react-navigation/native';
 import { render, screen,  } from '@testing-library/react-native';
 import Home from '../screens/Home';
 
@@ -15,6 +14,7 @@ describe('Teste de Integração para a screen Home', () => {
       expect(value).toBe(tests[i]);
     });
   });
+
   it('02 - Teste se é rederizado a tela com os textos do topo', () => {
     const textTitle = screen.getByText('FORCA');
     const textMessage = screen.getByText(/Para iniciarmos o jogo/i);

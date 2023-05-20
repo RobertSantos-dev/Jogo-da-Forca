@@ -27,6 +27,7 @@ export default function Keyboard({
         renderItem={ ({ item }) => (
           item != ' ' && (
             <TouchableOpacity
+              accessibilityRole='button'
               onPress={ () => search(item, setLetters, word, setInteraction, setResult) }
               style={ styles.button }>
               <Text style={ styles.buttonText }>{ item }</Text>
