@@ -35,8 +35,8 @@ Sobre o jogo, ele vai funcionar da seguinte forma:
 <br>
 
 ## Tecnologias e Ferramentas
-- **React Native**
-- **TypeScript**
-- **Jest**
-- **Expo Go**
-- **React Navigation**
+- React Native
+- TypeScript
+- Jest
+- Expo Go
+- React Navigation
